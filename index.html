@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wagner Costa — Portfólio Acadêmico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<header>
+
+  <!-- ════════════════════ NAV ════════════════════ -->
+  <nav>
+    <a href="#" class="nav-logo" aria-label="Voltar ao início">WG_COSTA.exe</a>
+
+    <!-- Links desktop (ficam visíveis normalmente no PC) -->
+    <div class="nav-links" id="nav-links">
+      <a href="#sobre"    onclick="fecharMenu()">SOBRE</a>
+      <a href="#formacao" onclick="fecharMenu()">FORMAÇÃO</a>
+      <a href="#skills"   onclick="fecharMenu()">SKILLS</a>
+      <a href="#projetos" onclick="fecharMenu()">PROJETOS</a>
+      <a href="#contato"  onclick="fecharMenu()">CONTATO</a>
+    </div>
+
+    <div class="nav-right">
+      <span class="nav-badge">● ONLINE</span>
+      <!-- Botão joystick (só aparece no mobile) -->
+      <button class="hamburger" id="hamburger"
+              aria-label="Abrir menu" onclick="toggleMenu()">🕹️</button>
+    </div>
+  </nav>
+
+  <!-- Overlay arcade (só mobile) -->
+  <div class="arcade-overlay" id="arcade-overlay" onclick="fecharMenu()"></div>
+  <div class="arcade-menu" id="arcade-menu">
+    <div class="arcade-menu-title">— SELECT STAGE —</div>
+    <a href="#sobre"    class="arcade-link" onclick="fecharMenu()">► SOBRE MIM</a>
+    <a href="#formacao" class="arcade-link" onclick="fecharMenu()">► FORMAÇÃO</a>
+    <a href="#skills"   class="arcade-link" onclick="fecharMenu()">► SKILLS</a>
+    <a href="#projetos" class="arcade-link" onclick="fecharMenu()">► PROJETOS</a>
+    <a href="#contato"  class="arcade-link" onclick="fecharMenu()">► CONTATO</a>
+    <button class="arcade-close" onclick="fecharMenu()">✕ FECHAR</button>
+  </div>
+</header>
+
+  <!-- ════════════════════ 1. APRESENTAÇÃO / HERO ════════════════════ -->
+  <section id="hero">
+    <div class="hero-tag">► DESENVOLVEDOR EM FORMAÇÃO ◄</div>
+    <p id="saudacao"></p><!-- preenchido pelo JS -->
+    <h1 class="hero-name">WAGNER COSTA</h1>
+    <p class="hero-role">› DSM · FATEC · SÃO JOSÉ DOS CAMPOS ‹</p>
+
+    <div class="hero-terminal">
+      <span class="prompt">$ </span>whoami<br>
+      <span style="color:var(--green)">→ Engenheiro. Estudante de TI. Criador de soluções.</span><br>
+      <span class="prompt">$ </span>status<br>
+      <span style="color:var(--yellow)" class="digitando">→ Em constante aprendizagem... </span>
+      <span class="cursor"></span>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#projetos" class="btn btn-primary">VER PROJETOS</a>
+      <a href="#contato"  class="btn btn-outline">CONTATO</a>
+    </div>
+  </section>
+
+  <div class="pixel-divider"></div>
+
+  <!-- ════════════════════ 2. SOBRE MIM ════════════════════ -->
+  <section id="sobre">
+    <div class="sec-wrap">
+      <div class="section-header reveal">
+        <h2 class="section-title glow-pink">
+          <span class="bracket">&lt;</span> SOBRE MIM <span class="bracket">/&gt;</span>
+        </h2>
+        <p class="section-sub">// carregando dados do jogador...</p>
+      </div>
+
+      <div class="sobre-container reveal">
+
+        <!-- Flip Card com foto -->
+        <div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="/img/imagens/Wagner.Costa.png" alt="Foto de Wagner Costa"
+                     onerror="this.outerHTML='<div style=\'font-size:72px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--purple)\'>👤</div>'">
+              </div>
+              <div class="flip-card-back">
+                <h3>WAGNER COSTA</h3>
+                <p>40 anos</p>
+                <p>Casado</p>
+                <p>Engenheiro → Dev</p>
+                <p>DSM · FATEC/SJC</p>
+              </div>
+            </div>
+          </div>
+          <p class="flip-hint">► HOVER P/ VIRAR ◄</p>
+        </div>
+
+        <!-- Texto + contato + stats -->
+        <div class="sobre-texto">
+          <p>
+            Olá! Sou <strong>WAGNER COSTA</strong>, engenheiro com experiência em gestão
+            empresarial, processos administrativos e gestão pública. Atualmente em transição
+            para TI, cursando <strong>DSM — Desenvolvimento de Software Multiplataforma</strong>
+            na FATEC/SJC, com o objetivo de integrar minha experiência profissional ao
+            desenvolvimento de soluções funcionais, criativas e bem estruturadas —
+            unindo estética e desempenho.
+          </p>
+          <p>
+            Este portfólio foi desenvolvido com <strong>HTML, CSS e JavaScript</strong>,
+            refletindo meu compromisso em aprender e aplicar boas práticas no desenvolvimento web.
+          </p>
+
+          <!-- Contato rápido — requisito: WhatsApp na apresentação -->
+          <div class="contato-rapido">
+            <a href="https://wa.me/5512981056787" target="_blank" class="contato-item">
+              <span>📱</span>(12) 98105-6787
+            </a>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-num" id="stat-projetos">0</span>
+              <span class="stat-label">PROJETOS</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">2º</span>
+              <span class="stat-label">SEM · FATEC</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="stat-cafes">99+</span>
+              <span class="stat-label" id="label-cafes">CAFÉS</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /sobre-container -->
+    </div><!-- /sec-wrap -->
+  </section>
+
+  <div class="pixel-divider"></div>
+
+  <!-- ════════════════════ 3. FORMAÇÃO ACADÊMICA ════════════════════ -->
+  <section id="formacao">
+    <div class="sec-wrap">
+      <div class="section-header reveal">
+        <h2 class="section-title glow-cyan">
+          <span class="bracket">&lt;</span> FORMAÇÃO ACADÊMICA <span class="bracket">/&gt;</span>
+        </h2>
+        <p class="section-sub">// level up: conhecimento desbloqueado</p>
+      </div>
+
+      <!-- Formação estática (conteúdo fixo, não muda) -->
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <span class="tl-icon">🎮</span>
+          <div class="tl-content">
+            <strong>DSM — Desenvolvimento de Software Multiplataforma</strong>
+            <span class="tl-inst">FATEC / São José dos Campos</span>
+            <span class="tl-year">2025 – 2028 (previsão) · em andamento</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-icon">🏛️</span>
+          <div class="tl-content">
+            <strong>Gestão Pública</strong>
+            <span class="tl-inst">UNINTER / São José dos Campos</span>
+            <span class="tl-year">2020 · concluído</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-icon">⚙️</span>
+          <div class="tl-content">
+            <strong>Engenharia de Produção Mecânica</strong>
+            <span class="tl-inst">UNITAU / Taubaté</span>
+            <span class="tl-year">2011 · concluído</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cursos complementares — renderizados via JS (requisito repetição) -->
+      <div class="sub-header reveal">
+        <h3>// CURSOS COMPLEMENTARES E CERTIFICAÇÕES</h3>
+      </div>
+      <div class="cursos-grid reveal" id="lista-cursos">
+        <!-- preenchido pelo script.js -->
+      </div>
+
+    </div>
+  
+    <!-- ════════ MODAL CERTIFICADO ════════ -->
+    <div class="modal-overlay" id="modal-overlay" onclick="fecharModal()"></div>
+    <div class="modal-box" id="modal-box">
+      <button class="modal-fechar" onclick="fecharModal()">✕</button>
+      <img id="modal-img" src="" alt="Certificado" />
+    </div>
+  </section>
+
+  <div class="pixel-divider"></div>
+
+  <!-- ════════════════════ 4. SKILLS / COMPETÊNCIAS ════════════════════ -->
+  <section id="skills">
+    <div class="sec-wrap">
+      <div class="section-header reveal">
+        <h2 class="section-title glow-cyan">
+          <span class="bracket">&lt;</span> COMPETÊNCIAS <span class="bracket">/&gt;</span>
+        </h2>
+        <p class="section-sub">// [LEVEL UP: 1º SEM. COMPLETO]</p>
+      </div>
+
+      <!-- Skills técnicas — renderizadas via JS (requisito repetição) -->
+      <div class="skills-grid reveal" id="skills-tecnicas">
+        <!-- preenchido pelo script.js -->
+      </div>
+
+      <!-- Soft Skills — renderizadas via JS -->
+      <div class="soft-label reveal">// COMPETÊNCIAS INTERPESSOAIS</div>
+      <div class="soft-pills reveal" id="soft-pills">
+        <!-- preenchido pelo script.js -->
+      </div>
+
+      <!-- Carrossel de tecnologias -->
+      <div class="carousel-label reveal">// TECNOLOGIAS EM APRENDIZAGEM</div>
+      <div class="carousel reveal">
+
+        <!-- Esteira -->
+        <div class="carousel-track">
+
+          <!-- Itens do carrossel -->
+          <div class="carousel-item"><div class="car-icon">🌐</div><span>HTML</span></div>
+          <div class="carousel-item"><div class="car-icon">🎨</div><span>CSS</span></div>
+          <div class="carousel-item"><div class="car-icon">⚡</div><span>JAVASCRIPT</span></div>
+          <div class="carousel-item"><div class="car-icon">🐍</div><span>PYTHON</span></div>
+          <div class="carousel-item"><div class="car-icon">🐙</div><span>GITHUB</span></div>
+          <div class="carousel-item"><div class="car-icon">▲</div><span>VERCEL</span></div>
+          <!-- duplicados para loop infinito -->
+          <div class="carousel-item"><div class="car-icon">🌐</div><span>HTML</span></div>
+          <div class="carousel-item"><div class="car-icon">🎨</div><span>CSS</span></div>
+          <div class="carousel-item"><div class="car-icon">⚡</div><span>JAVASCRIPT</span></div>
+          <div class="carousel-item"><div class="car-icon">🐍</div><span>PYTHON</span></div>
+          <div class="carousel-item"><div class="car-icon">🐙</div><span>GITHUB</span></div>
+          <div class="carousel-item"><div class="car-icon">▲</div><span>VERCEL</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pixel-divider"></div>
+
+  <!-- ════════════════════ 5. PROJETOS ════════════════════ -->
+  <section id="projetos">
+    <div class="sec-wrap">
+      <div class="section-header reveal">
+        <h2 class="section-title glow-pink">
+          <span class="bracket">&lt;</span> PROJETOS <span class="bracket">/&gt;</span>
+        </h2>
+        <p class="section-sub">// alguns dos meus trabalhos</p>
+      </div>
+
+      <!-- Filtros — usa filtrarProjetos() do JS -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" onclick="filtrarProjetos('todos', this)">TODOS</button>
+        <button class="filter-btn" onclick="filtrarProjetos('academico', this)">ACADÊMICO</button>
+        <button class="filter-btn" onclick="filtrarProjetos('api', this)">API</button>
+      </div>
+
+      <!-- Cards preenchidos via JS -->
+      <div class="projetos-grid reveal" id="lista-projetos"></div>
+    </div>
+  </section>
+
+  <div class="pixel-divider"></div>
+
+  <!-- ════════════════════ 6. CONTATO / LINKS PROFISSIONAIS ════════════════════ -->
+  <section id="contato">
+    <div class="sec-wrap">
+      <div class="section-header reveal">
+        <h2 class="section-title glow-cyan">
+          <span class="bracket">&lt;</span> LINKS PROFISSIONAIS <span class="bracket">/&gt;</span>
+        </h2>
+        <p class="section-sub">// INSERT COIN TO CONTINUE...</p>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-terminal">
+          <p><span class="ct-label">ABERTO A NOVOS PROJETOS, OPORTUNIDADES E APRENDIZAGENS.</span></p>
+        </div>
+
+        <div class="social-grid">
+          <a href="https://github.com/Costa-Wagner" target="_blank" class="social-btn sb-github">
+            <span class="s-icon">🐙</span>GITHUB
+          </a>
+          <a href="https://linkedin.com/in/wagner-costa-391b0726/" target="_blank" class="social-btn sb-linkedin">
+            <span class="s-icon">💼</span>LINKEDIN
+          </a>
+          <a href="https://wa.me/5512981056787" target="_blank" class="social-btn sb-whatsapp">
+            <span class="s-icon">💬</span>WHATSAPP
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer>
+    <p>WAGNER COSTA · DESENVOLVIDO COM <span class="heart">🔥</span> E <span class="code-tag">&lt;/&gt;</span></p>
+    <p>[PRESS START TO PLAY AGAIN]</p>
+    <p>© <span id="ano"></span> · Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
