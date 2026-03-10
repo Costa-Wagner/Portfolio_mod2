@@ -277,7 +277,7 @@
 
   <div class="pixel-divider"></div>
 
-  <!-- ════════════════════ 6. CONTATO / LINKS PROFISSIONAIS ════════════════════ -->
+<!-- ════════════════════ 6. CONTATO / LINKS PROFISSIONAIS ════════════════════ -->
   <section id="contato">
     <div class="sec-wrap">
       <div class="section-header reveal">
@@ -303,6 +303,36 @@
             <span class="s-icon">💬</span>WHATSAPP
           </a>
         </div>
+
+        <!-- FORMULÁRIO DE CONTATO -->
+        <div class="sub-header" style="margin-top:56px;margin-bottom:28px;">
+          <h3>// ENVIAR MENSAGEM</h3>
+        </div>
+
+        <form id="form-contato" class="form-contato" onsubmit="return validarFormulario(event)">
+
+          <div class="form-group">
+            <label class="form-label" for="form-nome">► NOME</label>
+            <input type="text" id="form-nome" class="form-input"
+                  placeholder="Seu nome completo" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-email">► E-MAIL</label>
+            <input type="email" id="form-email" class="form-input"
+                  placeholder="seu@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-mensagem">► MENSAGEM</label>
+            <textarea id="form-mensagem" class="form-input form-textarea"
+                      placeholder="Escreva sua mensagem aqui..." rows="5"></textarea>
+          </div>
+
+          <div id="form-feedback" class="form-feedback"></div>
+
+          <button type="submit" class="btn btn-primary">► ENVIAR MENSAGEM</button>
+        </form>
       </div>
     </div>
   </section>

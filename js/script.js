@@ -1,11 +1,5 @@
 /* =============================================================
    SCRIPT.JS — Wagner Costa · Portfólio Acadêmico
-   ─────────────────────────────────────────────────────────────
-   Requisitos JS cobertos:
-   ① Estrutura de decisão  → saudação por horário + filtro projetos
-   ② Comando de repetição  → forEach para cursos, skills e projetos
-   ③ Funções               → renderProjetos(), renderCursos(),
-                              renderSkills(), filtrarProjetos()
    ============================================================= */
 
 /* ─── MENU ARCADE (mobile) ─── */
@@ -322,6 +316,68 @@ function initReveal() {
   elementos.forEach(function (el) {
     observer.observe(el);
   });
+}
+
+/* ─── ① ESTRUTURA DE DECISÃO — Validação de formulário ─── */
+async function validarFormulario(event) {
+  event.preventDefault();
+
+  const nome     = document.getElementById("form-nome");
+  const email    = document.getElementById("form-email");
+  const mensagem = document.getElementById("form-mensagem");
+  const feedback = document.getElementById("form-feedback");
+
+  feedback.innerHTML = "";
+  feedback.className = "form-feedback";
+
+  let erros = [];
+
+  // if/else: verifica se cada campo está preenchido
+  if (nome.value.trim() === "") {
+    erros.push("► O campo NOME é obrigatório.");
+  }
+
+  if (email.value.trim() === "") {
+    erros.push("► O campo E-MAIL é obrigatório.");
+  } else if (!email.value.includes("@") || !email.value.includes(".")) {
+    erros.push("► Informe um E-MAIL válido.");
+  }
+
+  if (mensagem.value.trim() === "") {
+    erros.push("► O campo MENSAGEM é obrigatório.");
+  }
+
+  // if/else: exibe erros ou envia para o Formspree
+  if (erros.length > 0) {
+    feedback.className = "form-feedback erro";
+    for (let i = 0; i < erros.length; i++) {
+      feedback.innerHTML += "<p>" + erros[i] + "</p>";
+    }
+  } else {
+    // Envia para o Formspree
+    const resposta = await fetch("https://formspree.io/f/xdawaqnn", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nome: nome.value,
+        email: email.value,
+        mensagem: mensagem.value
+      })
+    });
+
+    if (resposta.ok) {
+      feedback.className = "form-feedback sucesso";
+      feedback.innerHTML = "<p>✔ Mensagem enviada! Em breve entrarei em contato.</p>";
+      nome.value     = "";
+      email.value    = "";
+      mensagem.value = "";
+    } else {
+      feedback.className = "form-feedback erro";
+      feedback.innerHTML = "<p>► Erro ao enviar. Tente novamente ou use o WhatsApp.</p>";
+    }
+  }
+
+  return false;
 }
 
 /* ─── INICIALIZAÇÃO ─── */
